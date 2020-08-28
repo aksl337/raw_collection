@@ -438,13 +438,13 @@ go get -u github.com/tomnomnom/gf
 
 gfp(){
 cd ~/tools
+cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf;
 git clone https://github.com/1ndianl33t/Gf-Patterns
 mv ~/tools/Gf-Patterns/*.json /root/.gf
 rm -rf ~/tools/Gf-Patterns
 wget https://raw.githubusercontent.com/devanshbatham/ParamSpider/master/gf_profiles/potential.json;
 mv ~/tools/potential.json /root/.gf;
 echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc;
-cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf;
 }
 gfp
 
