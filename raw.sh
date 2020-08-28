@@ -432,12 +432,12 @@ echo "${GREEN} [+] Fingerprinting & CVE tools ${RESET}"
 sudo pip3 install webtech
 go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
-nuclei -update-templates
+nuclei -update-templates;
 git clone https://github.com/projectdiscovery/nuclei-templates ~/tools/nuclei-templates
-go get -u github.com/tomnomnom/gf
 
 gfp(){
 cd ~/tools
+go get -u github.com/tomnomnom/gf
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf;
 git clone https://github.com/1ndianl33t/Gf-Patterns
 mv ~/tools/Gf-Patterns/*.json /root/.gf
