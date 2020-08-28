@@ -51,7 +51,7 @@ alias joomscan="perl ~/tools/CMS/Joomscan/joomscan.pl"
 #### Frameworks ####
 
 alias sudomy="bash /root/tools/Frameworks/Sudomy/sudomy"
-alias osmedeus='python3 /root/tools/Frameworks/Osmedeus/osmedeus.py -m "subdomain,portscan,vuln,git,burp,ip" -t'
+alias osmedeus='python3 /root/tools/Frameworks/osmedeus/osmedeus.py -m "subdomain,portscan,vuln,git,burp,ip" -t'
 
 
 #### Other Tools ####
