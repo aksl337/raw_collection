@@ -481,12 +481,12 @@ echo "${GREEN} [+] Downloading wordlists ${RESET}"
 {
 mkdir ~/tools/wordlists;
 cd ~/tools/wordlists/
-git clone https://github.com/assetnote/commonspeak2-wordlists ~/wordlists/commonspeak2-wordlists
+git clone https://github.com/assetnote/commonspeak2-wordlists
 wget https://raw.githubusercontent.com/Mad-robot/recon-tools/master/dicc.txt
-git clone https://github.com/1N3/IntruderPayloads ~/wordlists/IntruderPayloads
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings ~/wordlists/PayloadsAllTheThings
-git clone https://github.com/danielmiessler/SecLists ~/wordlists/SecLists
-cd ~/wordlists/SecLists/Discovery/DNS/
+git clone https://github.com/1N3/IntruderPayloads
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings
+git clone https://github.com/danielmiessler/SecLists
+cd SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 } > /dev/null 2>&1
