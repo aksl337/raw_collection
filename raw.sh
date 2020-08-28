@@ -43,7 +43,7 @@ echo ""
 
 
 echo "${GREEN} [+] Setting bash_profile aliases ${RESET}"
-curl --silent  > ~/.bash_aliases
+curl --silent  https://raw.githubusercontent.com/aksl337/raw_collection/master/bash_aliases.txt > ~/.bash_aliases
 echo "${BLUE} If it doesn't work, set it manually ${RESET}"
 echo ""
 
@@ -508,6 +508,6 @@ echo "${BLUE} Done ${RESET}"
 echo ""
 
 
-echo "${RED} use the command 'source ~/.bash_profile' for the shell functions to work ${RESET}"
+echo "${RED} use the command 'source ~/.bash_profile,bashrc,bash_aliases' for the shell functions to work ${RESET}"
 echo ""
 echo "${RED}      ALL THE THANKS TO THE BEST PEOPLE OF THE INFOSEC COMMUNITY   ${RESET}"
