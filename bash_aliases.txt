@@ -1,0 +1,71 @@
+alias dirsearch="python3 ~/tools/dirsearch/dirsearch.py -e conf,config,bak,backup,swp,old,db,sql,asp,aspx,aspx~,asp~,py,py~,rb,rb~,php,php~,bak,bkp,cache,cgi,conf,csv,html,inc,jar,js,json,jsp,jsp~,lock,log,rar,old,sql,sql.gz,sql~,swp,swp~,tar,tar.bz2,tar.gz,txt,wadl,zip,.log,.xml,.js.,.json"
+
+
+#### Domain ####
+
+
+alias massdns="~/tools/massdns/bin/massdns"
+
+alias subls="python3 ~/tools/Sublist3r/sublist3r.py"
+
+
+
+#### CORS ####
+
+alias corsy="python3 ~/tools/corsy/corsy.py"
+
+alias corscan="python3 ~/tools/corscanner/cors_scan.py"
+
+alias cors="$GOPATH/bin/CORS-Scanner"
+
+
+
+#### XSS ####
+
+alias xsstrike="python3 ~/tools/XSStrike/xsstrike.py"
+
+
+#### Cloud ####
+
+alias s3scanner="python3 ~/tools/AWS/S3Scanner/s3scanner.py"
+
+alias cloudflair="python3 ~/tools/AWS/CloudFlair/cloudflair.py"
+
+alias cloudunflare="bash ~/tools/AWS/CloudUnflare/cloudunflare.bash"
+
+alias gcpbrute="python3 ~/tools/GCPBucketBrute/gcpbucketbrute.py"
+
+
+
+#### CMS ####
+
+alias cmsmap="python3 ~/tools/CMS/CMSmap/cmsmap.py"
+
+alias cmseek="python3 ~/tools/CMS/CMSeek/cmseek.py"
+
+alias joomscan="perl ~/tools/CMS/Joomscan/joomscan.pl"
+
+
+#### Frameworks ####
+
+alias sudomy="bash /root/tools/Frameworks/Sudomy/sudomy"
+alias osmedeus='python3 /root/tools/Frameworks/Osmedeus/osmedeus.py -m "subdomain,portscan,vuln,git,burp,ip" -t'
+
+
+#### Other Tools ####
+
+alias photon="python3 ~/tools/Photon/photon.py"
+
+alias hakrawler="~/tools/hakrawler/hakrawler"
+
+alias paramspider="python3 ~/tools/ParamSpider/paramspider.py"
+
+alias jexboss="python3 ~/tools/jexboss/jexboss.py"
+
+alias goohak="sudo ~/tools/Goohak/goohak"
+
+alias secretfinder="python3 ~/tools/SecretFinder/SecretFinder.py"
+
+alias arjun="python3 ~/tools/Arjun/arjun.py"
+
+
