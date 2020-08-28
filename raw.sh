@@ -479,8 +479,10 @@ echo ""
 
 echo "${GREEN} [+] Downloading wordlists ${RESET}"
 {
+mkdir ~/tools/wordlists;
+cd ~/tools/wordlists/
 git clone https://github.com/assetnote/commonspeak2-wordlists ~/wordlists/commonspeak2-wordlists
-cd ~/tools/wordlists/ && wget https://raw.githubusercontent.com/Mad-robot/recon-tools/master/dicc.txt
+wget https://raw.githubusercontent.com/Mad-robot/recon-tools/master/dicc.txt
 git clone https://github.com/1N3/IntruderPayloads ~/wordlists/IntruderPayloads
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings ~/wordlists/PayloadsAllTheThings
 git clone https://github.com/danielmiessler/SecLists ~/wordlists/SecLists
