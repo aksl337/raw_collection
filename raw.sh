@@ -35,7 +35,7 @@ sudo apt-fast install -y nmap phantomjs
 sudo apt-fast install -y gem
 sudo apt-fast install -y perl
 sudo apt-fast install -y parallel
-sudo apt-fast install -y tmux
+sudo apt-fast install -y tmux file
 sudo apt-fast install -y dnsutils
 pip3 install jsbeautifier
 echo ""
@@ -161,7 +161,7 @@ go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
 go get -u github.com/tomnomnom/httprobe
 go get -u github.com/projectdiscovery/dnsprobe
 go get -u github.com/tomnomnom/burl
-curl --silent https://raw.githubusercontent.com/rastating/dnmasscan/master/dnmasscan > dnmasscan && sudo mv dnmasscan /usr/bin/
+curl --silent https://raw.githubusercontent.com/rastating/dnmasscan/master/dnmasscan > dnmasscan && sudo mv dnmasscan /usr/bin/ && chmod +x /usr/bin/dnmasscan
 go get -u github.com/projectdiscovery/httpx/cmd/httpx
 
 
@@ -275,6 +275,7 @@ go get -u github.com/michenriksen/aquatone
 go get -u github.com/sensepost/gowitness
 go get -u github.com/tomnomnom/concurl
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git ~/tools/EyeWitness
+bash ~/tools/EyeWitness/Python/setup/setup.sh
 git clone https://github.com/breenmachine/httpscreenshot.git ~/tools/httpscreenshot
 } > /dev/null
 echo "${BLUE} Done ${RESET}"
@@ -489,10 +490,21 @@ git clone https://github.com/danielmiessler/SecLists
 cd SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
+cd ~/tools/dirsearch/db/
+wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
+unzip wordlists.zip
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
+wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/spring-boot.txt
+wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.txt
+wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
 } > /dev/null 2>&1
 printf "${BLUE} Done ${RESET}"
 echo ""
 echo ""
+
 
 echo "${GREEN} [+] Installing tomnomnom tools ${RESET}"
 echo "${GREEN} check out his other tools as well  ${RESET}"
@@ -506,7 +518,75 @@ go get -u github.com/tomnomnom/qsreplace
 go get -u github.com/tomnomnom/hacks/tok
 
 } > /dev/null 2>&1
-echo "${BLUE} Done ${RESET}"
+
+echo "${GREEN} #### Installing CORS Tools #### ${RESET}"
+
+echo "${BLUE} installing corsy ${RESET}"
+git clone https://github.com/s0md3v/Corsy.git ~/tools/corsy
+cd ~/tools/corsy
+pip3 install -r requirements.txt
+chmod +x corsy.py
+echo "${BLUE} done ${RESET}"
+echo ""
+
+echo "${BLUE} installing cors-scanner ${RESET}"
+git clone https://github.com/chenjj/CORScanner.git ~/tools/corscanner
+cd ~/tools/corscanner
+pip3 install -r requirements.txt
+echo "${BLUE} done ${RESET}"
+echo ""
+
+echo "${BLUE} installing another cors scanner${RESET}"
+go get -u github.com/Tanmay-N/CORS-Scanner
+echo "${BLUE} done${RESET}"
+echo ""
+
+
+echo "Getting smuggler.py"
+git clone https://github.com/defparam/smuggler.git ~/tools/smuggler
+echo "recon dir"
+git clone https://github.com/venom26/recon.git ~/tools/recon
+cp ~/tools/recon/ffuf_extension.txt ~/tools/
+
+####favfreak
+echo "FavFreak"
+git clone https://github.com/devanshbatham/FavFreak ~/tools/FavFreak
+cd FavFreak
+virtualenv -p python3 env
+source /root/tools/FavFreak/env/bin/activate
+pip3 install -r requirements.txt 
+deactivate
+
+#relative-url
+echo "relative-url-extractor"
+git clone https://github.com/jobertabma/relative-url-extractor ~/tools/relative-url-extractor
+
+
+echo "${BLUE} LinkFinder${RESET}"
+git clone https://github.com/GerbenJavado/LinkFinder.git ~/tools/LinkFinder
+cd ~/tools/LinkFinder
+pip3 install -r requirements.txt
+python3 setup.py install
+echo "${BLUE} done${RESET}"
+echo ""
+
+echo "${BLUE} SecretFinder${RESET}"
+git clone https://github.com/m4ll0k/SecretFinder.git ~/tools/SecretFinder
+cd ~/tools/SecretFinder && chmod +x secretfinder
+pip3 install -r requirements.txt
+echo "${BLUE} done${RESET}"
+echo ""
+
+#rustscan other way install
+echo "${BLUE} RustScan${RESET}"
+git clone https://github.com/RustScan/RustScan ~/tools/RustScan
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
+source /root/.cargo/env
+cd ~/tools/RustScan
+cargo build --release
+ulimit -n 8800
+ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
+echo "${BLUE} done${RESET}"
 echo ""
 
 
