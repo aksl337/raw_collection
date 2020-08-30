@@ -579,9 +579,9 @@ echo ""
 
 #rustscan other way install
 echo "${BLUE} RustScan${RESET}"
-git clone https://github.com/RustScan/RustScan ~/tools/RustScan
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source /root/.cargo/env
+git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
 cargo build --release
 ulimit -n 8800
