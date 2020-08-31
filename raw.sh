@@ -154,9 +154,9 @@ echo ""
 
 echo "${GREEN} [+] Installing Resolvers ${RESET}"
 {
-pip3 install dnsgen
-pip3 install py-altdns
-pip3 install aiodnsbrute
+pip3 install dnsgen;
+pip3 install py-altdns;
+pip3 install aiodnsbrute;
 go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
 go get -u github.com/tomnomnom/httprobe
 go get -u github.com/projectdiscovery/dnsprobe
@@ -392,7 +392,13 @@ echo ""
 echo "${GREEN} [+] Downloading Frameworks ${RESET}"
 {
 git clone https://github.com/1N3/Sn1per.git ~/tools/Frameworks/Sn1per
+osmedeus(){
+echo "setup osmedeus"
 git clone https://github.com/j3ssie/Osmedeus.git ~/tools/Frameworks/osmedeus
+cd ~/tools/Frameworks/osmedeus
+./install.sh
+}
+osmedeus
 git clone https://github.com/WhaleShark-Team/cobra.git ~/tools/Frameworks/Cobra
 git clone https://github.com/0xinfection/tidos-framework.git ~/tools/Frameworks/TIDoS-Framework
 git clone https://github.com/m4ll0k/WAScan.git ~/tools/Frameworks/WAScan
@@ -548,10 +554,13 @@ echo "recon dir"
 git clone https://github.com/venom26/recon.git ~/tools/recon
 cp ~/tools/recon/ffuf_extension.txt ~/tools/
 
+echo "whatweb"
+git clone https://github.com/urbanadventurer/WhatWeb.git ~/tools/WhatWeb
+
 ####favfreak
 echo "FavFreak"
 git clone https://github.com/devanshbatham/FavFreak ~/tools/FavFreak
-cd FavFreak
+cd ~/tools/FavFreak
 virtualenv -p python3 env
 source /root/tools/FavFreak/env/bin/activate
 pip3 install -r requirements.txt 
@@ -583,11 +592,25 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source /root/.cargo/env
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
-cargo build --release
+cargo build --release;
+wait $!
 ulimit -n 8800
 ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
 echo "${BLUE} done${RESET}"
 echo ""
+
+echo "${BLUE} Tmux config ${RESET}"
+tmux_config(){
+echo "working tmux config"
+cd ~
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+}
+tmux_config
+echo "${BLUE} done${RESET}"
+echo ""
+
 
 
 echo "${RED} use the command 'source ~/.bash_profile,bashrc,bash_aliases' for the shell functions to work ${RESET}"
