@@ -8,35 +8,35 @@ RESET=$(tput sgr0)
 echo "${GREEN} [+] Updating and installing dependencies ${RESET}"
 echo ""
 {
-sudo apt-get -y update
-sudo apt-get -y upgrade
+apt-get -y update
+apt-get -y upgrade
 
-sudo add-apt-repository -y ppa:apt-fast/stable < /dev/null
-sudo echo debconf apt-fast/maxdownloads string 16 | sudo debconf-set-selections
-sudo echo debconf apt-fast/dlflag boolean true | sudo debconf-set-selections
-sudo echo debconf apt-fast/aptmanager string apt-get | sudo debconf-set-selections
-sudo apt install -y apt-fast
+add-apt-repository -y ppa:apt-fast/stable < /dev/null
+echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections
+echo debconf apt-fast/dlflag boolean true | debconf-set-selections
+echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections
+apt install -y apt-fast
 
-sudo apt-fast install -y apt-transport-https
-sudo apt-fast install -y libcurl4-openssl-dev
-sudo apt-fast install -y libssl-dev
-sudo apt-fast install -y jq
-sudo apt-fast install -y ruby-full
-sudo apt-fast install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-fast install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-fast install -y python-setuptools
-sudo apt-fast install -y libldns-dev
-sudo apt-fast install -y python3
-sudo apt-fast install -y python3-pip
-sudo apt-fast install -y python-dnspython
-sudo apt-fast install -y git gcc make libcap-dev
-sudo apt-fast install -y npm
-sudo apt-fast install -y nmap phantomjs
-sudo apt-fast install -y gem
-sudo apt-fast install -y perl
-sudo apt-fast install -y parallel
-sudo apt-fast install -y tmux file
-sudo apt-fast install -y dnsutils
+apt-fast install -y apt-transport-https
+apt-fast install -y libcurl4-openssl-dev
+apt-fast install -y libssl-dev
+apt-fast install -y jq
+apt-fast install -y ruby-full
+apt-fast install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt-fast install -y build-essential libssl-dev libffi-dev python-dev
+apt-fast install -y python-setuptools
+apt-fast install -y libldns-dev
+apt-fast install -y python3
+apt-fast install -y python3-pip
+apt-fast install -y python-dnspython
+apt-fast install -y git gcc make libcap-dev
+apt-fast install -y npm
+apt-fast install -y nmap phantomjs
+apt-fast install -y gem
+apt-fast install -y perl
+apt-fast install -y parallel
+apt-fast install -y tmux file
+apt-fast install -y dnsutils
 pip3 install jsbeautifier
 echo ""
 } > /dev/null 2>&1
@@ -75,35 +75,35 @@ go get -u github.com/projectdiscovery/subfinder/cmd/subfinder
 git clone https://github.com/Healdb/Elevate.git ~/tools/Elevate
 go get -u github.com/harleo/knockknock
 go get -u github.com/tomnomnom/assetfinder
-sudo pip3 install spyse.py
+pip3 install spyse.py
 
 subscraper(){
 git clone https://github.com/m8r0wn/subscraper ~/tools/subscraper
 cd ~/tools/subscraper
-sudo python3 setup.py install
+python3 setup.py install
 }
 subscraper
 
 subdomainizer(){
 git clone https://github.com/nsonaniya2010/SubDomainizer.git ~/tools/SubDomainizer
 cd ~/tools/SubDomainizer && chmod +x SubDomainizer.py
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 subdomainizer
 
 crtsh(){
 git clone https://github.com/YashGoti/crtsh.py ~/tools/crtsh.py
-cd ~/tools/crtsh.py && sudo pip3 install -r requirements.txt
+cd ~/tools/crtsh.py && pip3 install -r requirements.txt
 }
 crtsh
 
 sublert(){
 git clone https://github.com/yassineaboukir/sublert.git ~/tools/sublert
-sudo pip3 install virtualenv setuptools
+pip3 install virtualenv setuptools
 virtualenv sublert
 source sublert/bin/activate
 cd ~/tools/sublert
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 sublert
 
@@ -116,30 +116,30 @@ subsh
 OneforAll(){
 git clone https://github.com/shmilylty/OneForAll.git ~/tools/OneForAll
 cd ~/tools/OneForAll
-sudo python3 -m pip install -U pip3 setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
-sudo pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+python3 -m pip install -U pip3 setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
+pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 }
 OneForAll
 
 shosubgo(){
 git clone https://github.com/incogbyte/shosubgo.git ~/tools/shosubgo
 cd ~/tools/shosubgo/
-go build main.go && mv main shosubgo && sudo mv shosubgo /usr/bin/
+go build main.go && mv main shosubgo && mv shosubgo /usr/bin/
 }
 shosubgo
 
 sublister(){
 git clone https://github.com/aboul3la/Sublist3r.git ~/tools/Sublist3r
 cd ~/tools/Sublist3r
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 sublister
 
 findomain(){
 cd ~/tools
 wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
-sudo chmod +x findomain-linux
-sudo mv findomain-linux /usr/bin/findomain
+chmod +x findomain-linux
+mv findomain-linux /usr/bin/findomain
 }
 findomain
 
@@ -161,7 +161,7 @@ go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
 go get -u github.com/tomnomnom/httprobe
 go get -u github.com/projectdiscovery/dnsprobe
 go get -u github.com/tomnomnom/burl
-curl --silent https://raw.githubusercontent.com/rastating/dnmasscan/master/dnmasscan > dnmasscan && sudo mv dnmasscan /usr/bin/ && chmod +x /usr/bin/dnmasscan
+curl --silent https://raw.githubusercontent.com/rastating/dnmasscan/master/dnmasscan > dnmasscan && mv dnmasscan /usr/bin/ && chmod +x /usr/bin/dnmasscan
 go get -u github.com/projectdiscovery/httpx/cmd/httpx
 
 
@@ -175,7 +175,7 @@ massdns
 knockpy(){
 git clone https://github.com/guelfoweb/knock.git ~/tools/knockpy
 cd ~/tools/knockpy
-sudo python setup.py install
+python3 setup.py install
 }
 knockpy
 } > /dev/null 2>&1
@@ -199,7 +199,7 @@ echo ""
 echo "${GREEN} [+] Installing Cloud workflow Tools ${RESET}"
 {
 gem install aws_recon
-sudo pip3 install awscli --upgrade --user
+pip3 install awscli --upgrade --user
 git clone https://github.com/gwen001/s3-buckets-finder.git ~/tools/s3-buckets-finder
 git clone https://github.com/nahamsec/lazys3.git ~/tools/lazys3
 git clone https://github.com/ghostlulzhacks/s3brute.git ~/tools/s3brute
@@ -224,14 +224,14 @@ cloud_enum
 S3Scanner(){
 git clone https://github.com/sa7mon/S3Scanner.git ~/tools/S3Scanner
 cd ~/tools/S3Scanner
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 S3Scanner
 
 cloudflair(){
 git clone https://github.com/christophetd/CloudFlair.git ~/tools/CloudFlair
 cd ~/tools/CloudFlair && chmod +x cloudflair.py
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 cloudflair
 
@@ -239,7 +239,7 @@ cloudflair
 GCPBucketBrute(){
 git clone https://github.com/RhinoSecurityLabs/GCPBucketBrute.git ~/tools/GCPBucketBrute
 cd ~/tools/GCPBucketBrute
-sudo python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 }
 GCPBucketBrute
 } > /dev/null 2>&1
@@ -252,17 +252,17 @@ echo "${GREEN} [+] Installing Fuzzing tools ${RESET}"
 go get -u github.com/OJ/gobuster
 go get -u github.com/ffuf/ffuf
 git clone https://github.com/maurosoria/dirsearch.git ~/tools/dirsearch
-sudo apt-fast install wfuzz
+apt-fast install wfuzz
 go get -u github.com/tomnomnom/meg
 go get -u github.com/tomnomnom/waybackurls
-sudo pip3 install dirhunt
-sudo apt-fast install -y dirb
+pip3 install dirhunt
+apt-fast install -y dirb
 go get -u github.com/lc/gau
 
 secretfinder(){
 git clone https://github.com/m4ll0k/SecretFinder.git ~/tools/SecretFinder
 cd ~/tools/SecretFinder && chmod +x secretfinder
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 secretfinder
 } > /dev/null 2>&1
@@ -292,13 +292,13 @@ git clone https://github.com/s0md3v/Arjun.git ~/tools/Arjun
 photon(){
 git clone https://github.com/s0md3v/Photon.git ~/tools/Photon
 cd ~/tools/Photon
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 
 paramspider(){
 git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider
 cd ~/tools/ParamSpider
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 paramspider
 
@@ -306,7 +306,7 @@ hakrawler(){
 git clone https://github.com/hakluke/hakrawler.git ~/tools/hakrawler
 cd ~/tools/hakrawler
 go build main.go && mv main hakrawler
-sudo mv hakrawler /usr/bin/
+mv hakrawler /usr/bin/
 }
 hakrawler
 } > /dev/null 2>&1
@@ -316,28 +316,28 @@ echo ""
 echo "${GREEN} [+] Installing CMS Tools ${RESET}"
 {
 git clone https://github.com/rezasp/joomscan.git ~/tools/CMS/Joomscan
-sudo gem install wpscan
+gem install wpscan
 git clone https://github.com/0ang3el/aem-hacker.git ~/tools/CMS/aem-hacker
-sudo pip3 install droopescan
+pip3 install droopescan
 
 CMSmap(){
 git clone https://github.com/Dionach/CMSmap.git ~/tools/CMS/CMSmap
 cd ~/tools/CMS/CMSmap
-sudo pip3 install .
+pip3 install .
 }
 CMSmap
 
 wig(){
 git clone https://github.com/jekyc/wig.git ~/tools/CMS/wig
 cd ~/tools/wig
-sudo python3 setup.py install
+python3 setup.py install
 }
 wig
 
 CMSeeK(){
 git clone https://github.com/Tuhinshubhra/CMSeeK.git ~/tools/CMS/CMSeeK
 cd ~/tools/CMS/CMSeek
-sudo python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 }
 CMSeeK
 
@@ -345,7 +345,7 @@ CMSeeK
 drupwn(){
 git clone https://github.com/immunIT/drupwn.git ~/tools/CMS/drupwn
 cd ~/tools/CMS/drupwn
-sudo python3 setup.py install
+python3 setup.py install
 }
 drupwn
 } > /dev/null 2>&1
@@ -367,21 +367,21 @@ gitscanner
 gitgraber(){
 git clone https://github.com/hisxo/gitGraber.git ~/tools/GIT/gitGraber
 cd ~/tools/GIT/gitGraber && chmod +x gitGraber.py
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 gitgraber
 
 githound(){
 git clone https://github.com/tillson/git-hound.git ~/tools/GIT/git-hound
 cd ~/tools/GIT/git-hound
-sudo go build main.go && mv main githound
+go build main.go && mv main githound
 }
 githound
 
 gitsearch(){
 git clone https://github.com/gwen001/github-search.git ~/tools/GIT/github-search
 cd ~/tools/GIT/github-search
-sudo pip3 install -r  requirements3.txt
+pip3 install -r  requirements3.txt
 }
 gitsearch
 } > /dev/null 2>&1
@@ -421,14 +421,14 @@ git clone https://github.com/robre/scripthunter.git ~/tools/jshunter
 JSParser(){
 git clone https://github.com/nahamsec/JSParser.git ~/tools/JSParser
 cd ~/tools/JSParser
-sudo python3 setup.py install
+python3 setup.py install
 }
 
 LinkFinder(){
 git clone https://github.com/GerbenJavado/LinkFinder.git ~/tools/LinkFinder
 cd ~/tools/LinkFinder
-sudo pip3 install -r requirements.txt
-sudo python3 setup.py install
+pip3 install -r requirements.txt
+python3 setup.py install
 }
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
@@ -436,13 +436,21 @@ echo ""
 
 echo "${GREEN} [+] Fingerprinting & CVE tools ${RESET}"
 {
-sudo pip3 install webtech
+nucl(){	
+pip3 install webtech
 go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 nuclei -update-templates;
 git clone https://github.com/projectdiscovery/nuclei-templates ~/tools/nuclei-templates
+}
+nucl
 
 gfp(){
+pip3 install webtech
+go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
+GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+nuclei -update-templates;
+git clone https://github.com/projectdiscovery/nuclei-templates ~/tools/nuclei-templates
 cd ~/tools
 go get -u github.com/tomnomnom/gf
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf;
@@ -458,7 +466,7 @@ gfp
 waf(){
 git clone https://github.com/EnableSecurity/wafw00f.git ~/tools/waff00f
 cd ~/tools/wafw00f
-sudo python3 setup.py install
+python3 setup.py install
 }
 waf
 } > /dev/null 2>&1
@@ -467,10 +475,10 @@ echo ""
 
 echo "${GREEN} [+] Network and Port Scanning tools ${RESET}"
 {
-sudo apt-fast install -y nmap
-sudo apt-fast install -y brutespray
-sudo apt-fast install -y nikto
-sudo apt-fast install -y masscan
+apt-fast install -y nmap
+apt-fast install -y brutespray
+apt-fast install -y nikto
+apt-fast install -y masscan
 go get -u github.com/j3ssie/metabigor
 go get -u github.com/projectdiscovery/naabu/cmd/naabu
 
@@ -478,7 +486,7 @@ go get -u github.com/projectdiscovery/naabu/cmd/naabu
 asnlookup(){
 git clone https://github.com/yassineaboukir/asnlookup.git ~/tools/asnlookup
 cd ~/tools/asnlookup
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 }
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
@@ -592,7 +600,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
 source /root/.cargo/env
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
-cargo build --release;
+$(which cargo) build --release;
 wait $!
 ulimit -n 8800
 ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
