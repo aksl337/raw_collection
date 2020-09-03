@@ -588,7 +588,7 @@ echo ""
 
 #rustscan other way install
 echo "${BLUE} RustScan${RESET}"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
 source /root/.cargo/env
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
