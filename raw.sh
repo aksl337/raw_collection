@@ -450,11 +450,6 @@ git clone https://github.com/projectdiscovery/nuclei-templates ~/tools/nuclei-te
 nucl
 
 gfp(){
-pip3 install webtech
-go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
-GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
-nuclei -update-templates;
-git clone https://github.com/projectdiscovery/nuclei-templates ~/tools/nuclei-templates
 cd ~/tools
 go get -u github.com/tomnomnom/gf
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf;
