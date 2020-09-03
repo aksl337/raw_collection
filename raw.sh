@@ -384,27 +384,31 @@ cd ~/tools/GIT/github-search
 pip3 install -r  requirements3.txt
 }
 gitsearch
-} > /dev/null 2>&1
+} 
 echo "${BLUE} Done ${RESET}"
 echo ""
 
 
 echo "${GREEN} [+] Downloading Frameworks ${RESET}"
 {
-git clone https://github.com/1N3/Sn1per.git ~/tools/Frameworks/Sn1per
-osmedeus(){
+osmedee(){
 echo "setup osmedeus"
 git clone https://github.com/j3ssie/Osmedeus.git ~/tools/Frameworks/osmedeus
 cd ~/tools/Frameworks/osmedeus
 ./install.sh
-}
-osmedeus
+} 
+osmedee
+frameworks(){
+git clone https://github.com/1N3/Sn1per.git ~/tools/Frameworks/Sn1per
 git clone https://github.com/WhaleShark-Team/cobra.git ~/tools/Frameworks/Cobra
 git clone https://github.com/0xinfection/tidos-framework.git ~/tools/Frameworks/TIDoS-Framework
 git clone https://github.com/m4ll0k/WAScan.git ~/tools/Frameworks/WAScan
 git clone https://github.com/1N3/BlackWidow.git ~/tools/Frameworks/BlackWidow
 git clone --recursive https://github.com/screetsec/Sudomy.git ~/tools/Frameworks/Sudomy
 git clone https://github.com/dwisiswant0/scant3r.git ~/tools/Frameworks/scant3r
+}
+frameworks
+
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
