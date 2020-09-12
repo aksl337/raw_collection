@@ -71,11 +71,14 @@ echo ""
 
 echo "${GREEN} [+] Installing Subdomain Enum tools ${RESET}"
 {
+subtools(){}
 go get -u github.com/projectdiscovery/subfinder/cmd/subfinder
 git clone https://github.com/Healdb/Elevate.git ~/tools/Elevate
 go get -u github.com/harleo/knockknock
 go get -u github.com/tomnomnom/assetfinder
 pip3 install spyse.py
+}
+subtools
 
 subscraper(){
 git clone https://github.com/m8r0wn/subscraper ~/tools/subscraper
@@ -187,11 +190,14 @@ echo ""
 
 echo "${GREEN} [+] Installing Subdomain Takeover tools ${RESET}"
 {
+subss(){
 go get -u github.com/Ice3man543/SubOver
 pip3 install autosubtakeover
 git clone https://github.com/antichown/subdomain-takeover.git ~/tools/STO
 go get -u github.com/anshumanbh/tko-subs
 go get -u github.com/haccer/subjack
+}
+subss
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
@@ -357,10 +363,11 @@ echo ""
 
 echo "${GREEN} [+] Downloading Git tools ${RESET}"
 {
-go get -u github.com/eth0izzle/shhgit
-pip3 install truffleHog
+
 
 gitscanner(){
+go get -u github.com/eth0izzle/shhgit
+pip3 install truffleHog
 git clone https://github.com/HightechSec/git-scanner ~/tools/GIT/git-scanner
 cd ~/tools/GIT/git-scanner && chmod +x gitscanner.sh
 }
@@ -397,8 +404,8 @@ osmedee(){
 echo "setup osmedeus"
 git clone https://github.com/j3ssie/Osmedeus.git ~/tools/Frameworks/osmedeus
 cd ~/tools/Frameworks/osmedeus
-./install.sh
-} 
+bash install.sh
+}
 osmedee
 frameworks(){
 git clone https://github.com/1N3/Sn1per.git ~/tools/Frameworks/Sn1per
@@ -418,24 +425,27 @@ echo ""
 
 echo "${GREEN} [+] JS Enum Tools ${RESET}"
 {
+js_tools(){
 go get github.com/003random/getJS
 go get -u github.com/lc/subjs
 git clone https://github.com/dark-warlord14/JSScanner.git ~/tools/JSScanner
 git clone https://github.com/zseano/JS-Scan.git ~/tools/JS-Scan
 git clone https://github.com/robre/scripthunter.git ~/tools/jshunter
-
+}
+js_tools
 JSParser(){
 git clone https://github.com/nahamsec/JSParser.git ~/tools/JSParser
 cd ~/tools/JSParser
 python3 setup.py install
 }
-
+JSParser
 LinkFinder(){
 git clone https://github.com/GerbenJavado/LinkFinder.git ~/tools/LinkFinder
 cd ~/tools/LinkFinder
 pip3 install -r requirements.txt
 python3 setup.py install
 }
+LinkFinder
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
@@ -476,19 +486,37 @@ echo ""
 
 echo "${GREEN} [+] Network and Port Scanning tools ${RESET}"
 {
+#rustscan other way install
+rustscan(){
+
+echo "${BLUE} RustScan${RESET}"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
+source /root/.cargo/env
+git clone https://github.com/RustScan/RustScan ~/tools/RustScan
+cd ~/tools/RustScan
+$(which cargo) build --release;
+wait $!
+ulimit -n 8800
+ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
+}
+port_scanners(){
 apt-fast install -y nmap
 apt-fast install -y brutespray
 apt-fast install -y nikto
 apt-fast install -y masscan
 go get -u github.com/j3ssie/metabigor
 go get -u github.com/projectdiscovery/naabu/cmd/naabu
-
+rustscan
+}
+port_scanners
 
 asnlookup(){
 git clone https://github.com/yassineaboukir/asnlookup.git ~/tools/asnlookup
 cd ~/tools/asnlookup
 pip3 install -r requirements.txt
 }
+asnlookup
+
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
@@ -534,6 +562,8 @@ go get -u github.com/tomnomnom/hacks/tok
 
 } > /dev/null 2>&1
 
+
+cors_tools(){
 echo "${GREEN} #### Installing CORS Tools #### ${RESET}"
 
 echo "${BLUE} installing corsy ${RESET}"
@@ -594,21 +624,10 @@ cd ~/tools/SecretFinder && chmod +x secretfinder
 pip3 install -r requirements.txt
 echo "${BLUE} done${RESET}"
 echo ""
+}
+cors_tools
 
-#rustscan other way install
-echo "${BLUE} RustScan${RESET}"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
-source /root/.cargo/env
-git clone https://github.com/RustScan/RustScan ~/tools/RustScan
-cd ~/tools/RustScan
-$(which cargo) build --release;
-wait $!
-ulimit -n 8800
-ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
-echo "${BLUE} done${RESET}"
-echo ""
 
-echo "${BLUE} Tmux config ${RESET}"
 tmux_config(){
 echo "working tmux config"
 cd ~
