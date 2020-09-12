@@ -155,9 +155,9 @@ echo ""
 echo "${GREEN} [+] Installing Resolvers ${RESET}"
 {
 resolve(){
-pip3 install dnsgen;
-pip3 install py-altdns;
-pip3 install aiodnsbrute;
+pip3 install dnsgen
+pip3 install py-altdns
+pip3 install aiodnsbrute
 go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
 go get -u github.com/tomnomnom/httprobe
 go get -u github.com/projectdiscovery/dnsprobe
