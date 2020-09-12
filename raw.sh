@@ -71,7 +71,7 @@ echo ""
 
 echo "${GREEN} [+] Installing Subdomain Enum tools ${RESET}"
 {
-subtools(){}
+subtools(){
 go get -u github.com/projectdiscovery/subfinder/cmd/subfinder
 git clone https://github.com/Healdb/Elevate.git ~/tools/Elevate
 go get -u github.com/harleo/knockknock
