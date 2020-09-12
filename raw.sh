@@ -260,6 +260,7 @@ echo ""
 
 echo "${GREEN} [+] Installing Fuzzing tools ${RESET}"
 {
+Fuzzing(){
 go get -u github.com/OJ/gobuster
 go get -u github.com/ffuf/ffuf
 git clone https://github.com/maurosoria/dirsearch.git ~/tools/dirsearch
@@ -269,6 +270,8 @@ go get -u github.com/tomnomnom/waybackurls
 pip3 install dirhunt
 apt-fast install -y dirb
 go get -u github.com/lc/gau
+}
+Fuzzing
 
 secretfinder(){
 git clone https://github.com/m4ll0k/SecretFinder.git ~/tools/SecretFinder
@@ -294,17 +297,20 @@ echo ""
 
 echo "${GREEN} [+] Content Discovery tools ${RESET}"
 {
+cd_tools(){
 go get -u github.com/jaeles-project/gospider
 pip3 install scrapy
 go get -u github.com/m4ll0k/Aron
 git clone https://github.com/s0md3v/Arjun.git ~/tools/Arjun
-
+}
+cd_tools
 
 photon(){
 git clone https://github.com/s0md3v/Photon.git ~/tools/Photon
 cd ~/tools/Photon
 pip3 install -r requirements.txt
 }
+photon
 
 paramspider(){
 git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider
@@ -326,10 +332,13 @@ echo ""
 
 echo "${GREEN} [+] Installing CMS Tools ${RESET}"
 {
+droope(){
 git clone https://github.com/rezasp/joomscan.git ~/tools/CMS/Joomscan
 gem install wpscan
 git clone https://github.com/0ang3el/aem-hacker.git ~/tools/CMS/aem-hacker
 pip3 install droopescan
+}
+droope
 
 CMSmap(){
 git clone https://github.com/Dionach/CMSmap.git ~/tools/CMS/CMSmap
@@ -497,8 +506,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
 source /root/.cargo/env
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
-$(which cargo) build --release;
-wait $!
+cargo build --release;
 ulimit -n 8800
 ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
 }
@@ -628,7 +636,7 @@ pip3 install -r requirements.txt
 echo "${BLUE} done${RESET}"
 echo ""
 }
-cors_tools
+cors_tools > /dev/null 2>&1
 
 
 tmux_config(){
@@ -638,7 +646,7 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 }
-tmux_config
+tmux_config > /dev/null 2>&1
 echo "${BLUE} done${RESET}"
 echo ""
 
