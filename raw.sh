@@ -154,6 +154,7 @@ echo ""
 
 echo "${GREEN} [+] Installing Resolvers ${RESET}"
 {
+resolve(){
 pip3 install dnsgen;
 pip3 install py-altdns;
 pip3 install aiodnsbrute;
@@ -163,7 +164,8 @@ go get -u github.com/projectdiscovery/dnsprobe
 go get -u github.com/tomnomnom/burl
 curl --silent https://raw.githubusercontent.com/rastating/dnmasscan/master/dnmasscan > dnmasscan && mv dnmasscan /usr/bin/ && chmod +x /usr/bin/dnmasscan
 go get -u github.com/projectdiscovery/httpx/cmd/httpx
-
+}
+resolve
 
 massdns(){
 git clone https://github.com/blechschmidt/massdns.git ~/tools/massdns
