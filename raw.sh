@@ -206,6 +206,7 @@ echo ""
 
 echo "${GREEN} [+] Installing Cloud workflow Tools ${RESET}"
 {
+clouder(){
 gem install aws_recon
 pip3 install awscli --upgrade --user
 git clone https://github.com/gwen001/s3-buckets-finder.git ~/tools/s3-buckets-finder
@@ -215,6 +216,8 @@ git clone https://github.com/greycatz/CloudUnflare.git ~/tools/CloudUnflare
 git clone https://github.com/fellchase/flumberboozle ~/tools/flumberboozle
 git clone https://github.com/appsecco/spaces-finder.git ~/tools/spaces-finder
 pip3 install festin
+}
+clouder
 
 slurp(){
 git clone https://github.com/avineshwar/slurp.git ~/tools/slurp
