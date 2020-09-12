@@ -42,7 +42,7 @@ echo ""
 } > /dev/null 2>&1
 
 
-echo "${GREEN} [+] Setting bash_profile aliases ${RESET}"
+echo "${GREEN} [+] Setting bash_aliases.txt aliases ${RESET}"
 curl --silent  https://raw.githubusercontent.com/aksl337/raw_collection/master/bash_aliases.txt > ~/.bash_aliases
 echo "${BLUE} If it doesn't work, set it manually ${RESET}"
 echo ""
@@ -291,7 +291,7 @@ go get -u github.com/tomnomnom/concurl
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git ~/tools/EyeWitness
 bash ~/tools/EyeWitness/Python/setup/setup.sh
 git clone https://github.com/breenmachine/httpscreenshot.git ~/tools/httpscreenshot
-} > /dev/null
+} > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
 
@@ -405,7 +405,7 @@ cd ~/tools/GIT/github-search
 pip3 install -r  requirements3.txt
 }
 gitsearch
-} 
+} > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
 
