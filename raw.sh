@@ -507,6 +507,7 @@ source /root/.cargo/env
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
 cargo build --release;
+cargo install feroxbuster;
 ulimit -n 8800
 ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
 }
@@ -536,6 +537,9 @@ echo "${GREEN} [+] Downloading wordlists ${RESET}"
 {
 mkdir ~/tools/wordlists;
 cd ~/tools/wordlists/
+wget https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
+wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+git clone https://github.com/random-robbie/bruteforce-lists.git
 git clone https://github.com/assetnote/commonspeak2-wordlists
 wget https://raw.githubusercontent.com/Mad-robot/recon-tools/master/dicc.txt
 git clone https://github.com/1N3/IntruderPayloads
