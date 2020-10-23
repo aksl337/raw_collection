@@ -271,9 +271,8 @@ cd ~/tools/SecretFinder && chmod +x secretfinder
 pip3 install -r requirements.txt
 }
 secretfinder
-} > /dev/null 2>&1
-echo "${BLUE} Done ${RESET}"
-echo ""
+} 
+
 
 echo "${GREEN} [+] Visual Inspection tools ${RESET}"
 {
@@ -283,7 +282,7 @@ go get -u github.com/tomnomnom/concurl
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git ~/tools/EyeWitness
 bash ~/tools/EyeWitness/Python/setup/setup.sh
 git clone https://github.com/breenmachine/httpscreenshot.git ~/tools/httpscreenshot
-} > /dev/null 2>&1
+} 
 echo "${BLUE} Done ${RESET}"
 echo ""
 
