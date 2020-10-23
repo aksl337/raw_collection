@@ -35,7 +35,7 @@ apt-fast install -y nmap phantomjs
 apt-fast install -y gem
 apt-fast install -y perl
 apt-fast install -y parallel
-apt-fast install -y tmux file
+apt-fast install -y tmux file rename xargs
 apt-fast install -y dnsutils
 pip3 install jsbeautifier
 echo ""
@@ -52,15 +52,7 @@ if [ ! -f /usr/bin/go ] && [ ! -f /$HOME/.go/bin/go ];then
     cd ~
     {
     wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
-	export GOROOT=$HOME/.go
-	export PATH=$GOROOT/bin:$PATH
-	export GOPATH=$HOME/go
-	# default PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-    echo 'export GOROOT=$HOME/.go' >> ~/.bash_profile
-	
-	echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-	echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile
-    source ~/.bash_profile
+	source ~/.bashrc
     } > /dev/null
 else
     echo "${BLUE} Golang is already installed${RESET}"
@@ -651,6 +643,14 @@ ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 }
 tmux_config > /dev/null 2>&1
+
+chrome_drive(){
+echo "working chrome drive"
+cd ~/tools/
+wget -c https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+}
+chrome_drive > /dev/null 2>&1
 echo "${BLUE} done${RESET}"
 echo ""
 
