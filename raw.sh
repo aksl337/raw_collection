@@ -36,7 +36,7 @@ apt-fast install -y gem
 apt-fast install -y perl
 apt-fast install -y parallel
 apt-fast install -y tmux file rename xargs
-apt-fast install -y dnsutils
+apt-fast install -y dnsutils moreutils
 pip3 install jsbeautifier
 echo ""
 } > /dev/null 2>&1
@@ -143,6 +143,13 @@ GO111MODULE=on go get -v github.com/OWASP/Amass/v3/...
 }
 amass
 
+interlacee(){
+	git clone https://github.com/codingo/Interlace.git ~/tools/Interlace
+	cd ~/tools/Interlace
+	python3 setup.py install;
+	cd ~/tools
+}
+interlacee
 } > /dev/null 2>&1
 echo "${BLUE} Done ${RESET}"
 echo ""
@@ -176,6 +183,7 @@ python3 setup.py install
 }
 knockpy
 } > /dev/null 2>&1
+
 echo "${BLUE} Done ${RESET}"
 echo ""
 
@@ -183,6 +191,7 @@ echo ""
 echo "${GREEN} [+] Installing Subdomain Takeover tools ${RESET}"
 {
 subss(){
+cd ~/tools
 go get -u github.com/Ice3man543/SubOver
 pip3 install autosubtakeover
 git clone https://github.com/antichown/subdomain-takeover.git ~/tools/STO
@@ -495,10 +504,10 @@ rustscan(){
 echo "${BLUE} RustScan${RESET}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y;
 source /root/.cargo/env
+cargo install feroxbuster;
 git clone https://github.com/RustScan/RustScan ~/tools/RustScan
 cd ~/tools/RustScan
 cargo build --release;
-cargo install feroxbuster;
 ulimit -n 8800
 ln -s /root/tools/RustScan/target/release/rustscan /usr/bin/rustscan
 }
@@ -565,6 +574,7 @@ go get -u github.com/tomnomnom/hacks/filter-resolved
 go get -u github.com/tomnomnom/fff
 go get -u github.com/tomnomnom/qsreplace
 go get -u github.com/tomnomnom/hacks/tok
+go get -u github.com/tomnomnom/hacks/kxss
 
 } > /dev/null 2>&1
 
